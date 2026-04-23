@@ -1,119 +1,92 @@
-:root {
-    --primary-purple: #a855f7;
-    --dark-purple: #7e22ce;
-    --light-purple: #faf5ff;
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
-    --white: #ffffff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apect Launcher | Modern Minecraft Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <nav class="navbar">
+        <div class="logo">Apect<span>Launcher</span></div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="https://github.com/Netgoldfish/Apect-Launcher" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </nav>
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
-    background-color: var(--white);
-    line-height: 1.6;
-}
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">✨ Now in Public Beta</div>
+            <h1>The New Standard for <br><span class="highlight">Minecraft.</span></h1>
+            <p>A lightweight, powerful, and aesthetically pleasing launcher built for the modern player. Optimized for performance, designed for style.</p>
+            <div class="cta-group">
+                <a href="https://github.com/Netgoldfish/Apect-Launcher/releases/latest" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Apect
+                </a>
+                <a href="#features" class="btn btn-secondary">Explore Features</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <!-- You can put a screenshot of the app here -->
+            <div class="mockup-container">
+                <img src="browsing.png" alt="Apect Launcher Interface" class="main-mockup">
+            </div>
+        </div>
+    </header>
 
-/* --- Navigation --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10%;
-    background: var(--white);
-    border-bottom: 1px solid #f3f4f6;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    <section id="features" class="features">
+        <div class="section-header">
+            <span class="sub">Performance First</span>
+            <h2>Built for Power Users</h2>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-cubes"></i></div>
+                <h3>Modrinth & CurseForge</h3>
+                <p>Browse and install millions of mods and shaders without ever leaving the app interface.</p>
+            </div>
 
-.logo { font-size: 1.5rem; font-weight: 800; }
-.logo span { color: var(--primary-purple); }
+            <div class="feature-card active">
+                <div class="icon-box"><i class="fas fa-user-astronaut"></i></div>
+                <h3>Skin Customizer</h3>
+                <p>Preview your character in 3D. Switch styles instantly with support for Classic and Slim models.</p>
+            </div>
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-main);
-    margin-left: 2rem;
-    font-weight: 600;
-    transition: 0.3s;
-}
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-file-import"></i></div>
+                <h3>Instant Import</h3>
+                <p>Switching is easy. Import your data from Prism, CurseForge, MultiMC, and ATLauncher in one click.</p>
+            </div>
+        </div>
+    </section>
 
-.nav-links a:hover { color: var(--primary-purple); }
+    <section id="about" class="about-section">
+        <div class="about-card">
+            <h2>The Passion Project</h2>
+            <p>Apect Launcher is an open-source initiative built by <strong>Apect Hosting devs</strong>. We wanted a tool that was fast, looked great, and gave users total control over their game.</p>
+            <div class="stats">
+                <div class="stat-item"><span>100%</span><p>Open Source</p></div>
+                <div class="stat-item"><span>0ms</span><p>Bloatware</p></div>
+                <div class="stat-item"><span>🚀</span><p>High Speed</p></div>
+            </div>
+        </div>
+    </section>
 
-/* --- Hero --- */
-.hero {
-    text-align: center;
-    padding: 8rem 10%;
-    background: linear-gradient(180deg, var(--light-purple) 0%, var(--white) 100%);
-}
-
-.hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
-.highlight { color: var(--primary-purple); }
-.hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
-
-.btn {
-    padding: 0.8rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: var(--primary-purple);
-    color: var(--white);
-    box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
-}
-
-.btn-primary:hover {
-    background: var(--dark-purple);
-    transform: translateY(-2px);
-}
-
-/* --- Features --- */
-.features { padding: 5rem 10%; }
-.features h2 { text-align: center; margin-bottom: 4rem; font-size: 2.5rem; }
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin-bottom: 8rem;
-}
-
-.feature-item.reverse { flex-direction: row-reverse; }
-
-.feature-text { flex: 1; }
-.feature-text h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--primary-purple); }
-.feature-text p { font-size: 1.1rem; color: var(--text-muted); }
-
-.feature-image { flex: 1.5; }
-.feature-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border: 1px solid #f3f4f6;
-}
-
-/* --- About Section --- */
-.about-section {
-    background: var(--primary-purple);
-    color: var(--white);
-    padding: 6rem 10%;
-    text-align: center;
-}
-
-.about-content { max-width: 800px; margin: 0 auto; }
-.about-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-.about-content p { font-size: 1.2rem; opacity: 0.9; }
-
-/* --- Footer --- */
-footer { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
-
-/* --- Mobile --- */
-@media (max-width: 768px) {
-    .feature-item, .feature-item.reverse { flex-direction: column; text-align: center; }
-    .hero h1 { font-size: 2.5rem; }
-}
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Apect Launcher. Built by developers, for players.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
