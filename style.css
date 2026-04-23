@@ -1,92 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apect Launcher | Modern Minecraft Management</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="blob-bg"></div>
+:root {
+    --primary: #a855f7;
+    --primary-glow: rgba(168, 85, 247, 0.5);
+    --accent: #c084fc;
+    --bg-dark: #0a0a0c;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
 
-    <nav class="navbar">
-        <div class="logo">Apect<span>Launcher</span></div>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="https://github.com/Netgoldfish/Apect-Launcher" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </nav>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <header class="hero">
-        <div class="hero-content">
-            <div class="badge">✨ Now in Public Beta</div>
-            <h1>The New Standard for <br><span class="highlight">Minecraft.</span></h1>
-            <p>A lightweight, powerful, and aesthetically pleasing launcher built for the modern player. Optimized for performance, designed for style.</p>
-            <div class="cta-group">
-                <a href="https://github.com/Netgoldfish/Apect-Launcher/releases/latest" class="btn btn-primary">
-                    <i class="fas fa-download"></i> Download Apect
-                </a>
-                <a href="#features" class="btn btn-secondary">Explore Features</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <!-- You can put a screenshot of the app here -->
-            <div class="mockup-container">
-                <img src="browsing.png" alt="Apect Launcher Interface" class="main-mockup">
-            </div>
-        </div>
-    </header>
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <section id="features" class="features">
-        <div class="section-header">
-            <span class="sub">Performance First</span>
-            <h2>Built for Power Users</h2>
-        </div>
-        
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="icon-box"><i class="fas fa-cubes"></i></div>
-                <h3>Modrinth & CurseForge</h3>
-                <p>Browse and install millions of mods and shaders without ever leaving the app interface.</p>
-            </div>
+/* --- Animated Background --- */
+.blob-bg {
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    animation: pulse 10s infinite alternate;
+}
 
-            <div class="feature-card active">
-                <div class="icon-box"><i class="fas fa-user-astronaut"></i></div>
-                <h3>Skin Customizer</h3>
-                <p>Preview your character in 3D. Switch styles instantly with support for Classic and Slim models.</p>
-            </div>
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
 
-            <div class="feature-card">
-                <div class="icon-box"><i class="fas fa-file-import"></i></div>
-                <h3>Instant Import</h3>
-                <p>Switching is easy. Import your data from Prism, CurseForge, MultiMC, and ATLauncher in one click.</p>
-            </div>
-        </div>
-    </section>
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <section id="about" class="about-section">
-        <div class="about-card">
-            <h2>The Passion Project</h2>
-            <p>Apect Launcher is an open-source initiative built by <strong>Apect Hosting devs</strong>. We wanted a tool that was fast, looked great, and gave users total control over their game.</p>
-            <div class="stats">
-                <div class="stat-item"><span>100%</span><p>Open Source</p></div>
-                <div class="stat-item"><span>0ms</span><p>Bloatware</p></div>
-                <div class="stat-item"><span>🚀</span><p>High Speed</p></div>
-            </div>
-        </div>
-    </section>
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--primary); }
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Apect Launcher. Built by developers, for players.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .github-link:hover { color: var(--white); }
+
+/* --- Hero --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10rem 10% 5rem;
+}
+
+.badge {
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.hero h1 { 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    font-weight: 800; 
+    line-height: 1.1; 
+    margin-bottom: 1.5rem;
+}
+
+.highlight { 
+    background: linear-gradient(90deg, var(--primary), #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p { 
+    font-size: 1.2rem; 
+    color: var(--text-muted); 
+    max-width: 700px; 
+    margin-bottom: 3rem; 
+}
+
+/* --- Buttons --- */
+.cta-group { display: flex; gap: 1rem; }
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 30px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--primary-glow);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: white;
+    border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* --- Mockup --- */
+.mockup-container {
+    margin-top: 5rem;
+    position: relative;
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    border: 1px solid var(--glass-border);
+}
+
+.main-mockup {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+/* --- Features Grid --- */
+.features { padding: 8rem 10%; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header .sub { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+.section-header h2 { font-size: 3rem; margin-top: 0.5rem; }
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.feature-card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+.feature-card p { color: var(--text-muted); }
+
+/* --- About --- */
+.about-section { padding: 5rem 10%; }
+.about-card {
+    background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+    padding: 5rem;
+    border-radius: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+.about-card p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; opacity: 0.9; }
+
+.stats { display: flex; justify-content: center; gap: 4rem; }
+.stat-item span { display: block; font-size: 2rem; font-weight: 800; }
+.stat-item p { font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem; }
+
+/* --- Footer --- */
+footer {
+    padding: 4rem 10%;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials { display: flex; gap: 1.5rem; font-size: 1.2rem; }
+.socials a { color: var(--text-muted); transition: 0.3s; }
+.socials a:hover { color: var(--primary); }
+
+/* --- Mobile Optimization --- */
+@media (max-width: 768px) {
+    .navbar { padding: 1rem 5%; }
+    .nav-links { display: none; } /* Hide links for simple mobile */
+    .hero { padding-top: 6rem; }
+    .stats { flex-direction: column; gap: 2rem; }
+    .about-card { padding: 3rem 1.5rem; }
+}
