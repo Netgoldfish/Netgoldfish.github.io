@@ -3,73 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apect Launcher | Modern Minecraft Management</title>
+    <title>Apect Launcher | Playful Minecrafting</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+    <!-- Playful Background Shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
     <nav class="navbar">
-        <div class="logo">Apect<span>Launcher</span></div>
+        <div class="logo">
+            <div class="logo-cube"></div>
+            Apect<span>Launcher</span>
+        </div>
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#about">About</a>
-            <a href="https://github.com/Netgoldfish/Apect-Launcher" target="_blank" class="github-link">GitHub</a>
+            <a href="https://github.com/Netgoldfish/Apect-Launcher" target="_blank" class="github-pill">
+                <i class="ph ph-github-logo"></i> GitHub
+            </a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1>The New Standard for <br><span class="highlight">Minecraft Launchers.</span></h1>
-            <p>A lightweight, powerful, and aesthetically pleasing launcher built for the modern player.</p>
-            <div class="cta-group">
-                <a href="https://github.com/Netgoldfish/Apect-Launcher/releases/latest" class="btn btn-primary">Download Apect</a>
+        <div class="hero-tag">The ultimate block-building companion ✌️</div>
+        <h1>Make your Minecraft <br><span class="gradient-text">Beautifully Simple.</span></h1>
+        <p>Apect is the lightweight, fun-to-use launcher that treats your mods, skins, and instances like royalty.</p>
+        
+        <div class="cta-group">
+            <a href="#" class="btn-main">
+                <span>Download Now</span>
+                <i class="ph ph-download-simple"></i>
+            </a>
+            <a href="#" class="btn-ghost">View Source</a>
+        </div>
+
+        <div class="hero-window">
+            <div class="window-controls">
+                <span></span><span></span><span></span>
             </div>
+            <img src="browsing.png" alt="App Preview">
         </div>
     </header>
 
     <section id="features" class="features">
-        <h2>Built for Power Users</h2>
-        
-        <div class="feature-item">
-            <div class="feature-text">
-                <h3>Modrinth & CurseForge Browsing</h3>
-                <p>Access the world's largest mod repositories directly. Browse, search, and install mods, modpacks, and shaders without ever leaving the launcher.</p>
-            </div>
-            <div class="feature-image">
-                <img src="browsing.png" alt="Mod Browsing Interface">
-            </div>
+        <div class="section-title">
+            <h2>Why you'll <span class="love">love</span> Apect</h2>
         </div>
 
-        <div class="feature-item reverse">
-            <div class="feature-text">
-                <h3>Advanced Skin Customizer</h3>
-                <p>Express yourself with a full-featured skin and cape manager. Preview your character in 3D and switch styles instantly with support for both Classic and Slim models.</p>
+        <div class="bento-grid">
+            <div class="bento-item card-purple">
+                <i class="ph ph-sparkle"></i>
+                <h3>Mod Heaven</h3>
+                <p>Browse Modrinth & CurseForge without the lag.</p>
             </div>
-            <div class="feature-image">
-                <img src="skins.png" alt="Skin Customizer Interface">
+            <div class="bento-item card-green">
+                <i class="ph ph-t-shirt"></i>
+                <h3>3D Wardrobe</h3>
+                <p>Switch skins and capes in a gorgeous 3D previewer.</p>
             </div>
-        </div>
-
-        <div class="feature-item">
-            <div class="feature-text">
-                <h3>Import from Multiple Launchers</h3>
-                <p>Switching is easy. Effortlessly import your existing instances and data from Prism, CurseForge, Modrinth, MultiMC, and ATLauncher.</p>
+            <div class="bento-item card-blue">
+                <i class="ph ph-rocket-launch"></i>
+                <h3>Turbo Import</h3>
+                <p>One-click moving from Prism or MultiMC.</p>
             </div>
-            <div class="feature-image">
-                <img src="import.png" alt="Launcher Import Interface">
+            <div class="bento-item card-yellow">
+                <i class="ph ph-code"></i>
+                <h3>Open Source</h3>
+                <p>Built with ❤️ by the community, for the community.</p>
             </div>
         </div>
     </section>
 
     <section id="about" class="about-section">
-        <div class="about-content">
+        <div class="fun-box">
             <h2>The Passion Project</h2>
-            <p>Apect Launcher is an open-source initiative <strong>built by Apect Hosting devs in their spare time</strong>. We wanted a tool that was fast, looked great, and gave users total control over their game.</p>
+            <p>We're just a group of devs who thought launchers were getting too boring. So we made Apect—fast, cute, and powerful.</p>
+            <div class="floating-icons">
+                <i class="ph ph-heart-straight"></i>
+                <i class="ph ph-coffee"></i>
+                <i class="ph ph-game-controller"></i>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Apect Launcher. Built by developers, for players.</p>
+        <p>© 2026 Apect Launcher • Let's build something cool.</p>
     </footer>
 </body>
 </html>
